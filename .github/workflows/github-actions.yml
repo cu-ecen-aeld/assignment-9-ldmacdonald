@@ -22,7 +22,9 @@ jobs:
                docker run --rm \
                  -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
+                 -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
                  cuaesd/aesd-autotest:24-assignment6-yocto \
+                 --workdir=${GITHUB_WORKSPACE} \
                  ./build.sh
           - name: Cleanup
             if: always()
