@@ -22,9 +22,10 @@ jobs:
                docker run --rm \
                  -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
+                 -v /home/dale/source/assignment6-actions-runner/_work/assignment-6-ldmacdonald/assignment-6-ldmacdonald:/workdir \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
                  cuaesd/aesd-autotest:24-assignment6-yocto \
-                 -v home/dale/source/assignment6-actions-runner/_work/assignment-6-ldmacdonald/assignment-6-ldmacdonald:/workdir \
+                 
                  --workdir=/workdir
                  ./build.sh
           - name: Cleanup
