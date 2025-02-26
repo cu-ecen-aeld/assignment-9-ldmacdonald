@@ -25,7 +25,6 @@ jobs:
                  -v /home/dale/source/assignment6-actions-runner/_work:/workdir \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
                  cuaesd/aesd-autotest:24-assignment6-yocto \
-                 
                  --workdir=/workdir
                  ./build.sh
           - name: Cleanup
