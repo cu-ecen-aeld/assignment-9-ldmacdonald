@@ -25,6 +25,7 @@ jobs:
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
                  cuaesd/aesd-autotest:24-assignment6-yocto \
                  -v home/dale/source/assignment6-actions-runner/_work/assignment-6-ldmacdonald/assignment-6-ldmacdonald:/workdir \
+                 --workdir=/workdir
                  ./build.sh
           - name: Cleanup
             if: always()
