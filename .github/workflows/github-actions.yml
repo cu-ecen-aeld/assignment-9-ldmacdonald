@@ -24,7 +24,7 @@ jobs:
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
                  cuaesd/aesd-autotest:24-assignment6-yocto \
-                 --workdir=${GITHUB_WORKSPACE} \
+                 -v home/dale/source/assignment6-actions-runner/_work/assignment-6-ldmacdonald/assignment-6-ldmacdonald:/workdir \
                  ./build.sh
           - name: Cleanup
             if: always()
