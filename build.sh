@@ -35,3 +35,4 @@ fi
 
 set -e
 bitbake core-image-aesd
+ 
