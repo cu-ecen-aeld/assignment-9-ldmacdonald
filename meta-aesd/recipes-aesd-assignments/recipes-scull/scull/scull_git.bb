@@ -12,7 +12,6 @@ LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=f098732a73b5f6f3430472f5b094ffdb"
 
 SRC_URI = "git://git@github.com/cu-ecen-aeld/assignment-7-ldmacdonald.git;protocol=ssh;branch=main \
-           file://0001-Only-build-scull-misc-modules.patch \
            file://files/scull-start-stop \
            "
 
