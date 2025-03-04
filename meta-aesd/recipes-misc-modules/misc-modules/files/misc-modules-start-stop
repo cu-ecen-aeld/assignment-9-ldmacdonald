@@ -12,8 +12,8 @@ case "$1" in
         ;;
     stop)
         echo "unloading misc-modules"
-        rmmmod faulty
-        module_unload hello
+        module_unload faulty
+        rmmod hello
         ;;
     *)
         echo "Usage: $0 {start|stop}"
