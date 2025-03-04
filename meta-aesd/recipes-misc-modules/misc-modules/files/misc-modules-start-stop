@@ -1,16 +1,18 @@
 #! /bin/bash
 
+# CONFIG_MD_FAULTY is not set
+
 set -e
 
 case "$1" in
     start)
         echo "loading misc-modules"
-        module_load faulty
         modprobe hello
+        modprobe faulty
         ;;
     stop)
         echo "unloading misc-modules"
-        module_unload faulty
+        rmmmod faulty
         rmmod hello
         ;;
     *)
