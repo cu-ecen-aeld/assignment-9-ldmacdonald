@@ -1,0 +1,17 @@
+set -ecen
+
+case "$1" in
+    start)
+        echo "loading scull"
+        start-stop-daemon -S -n scull
+        ;;
+    stop)
+        echo "stopping scull"
+        start-stop-daemon -K -n scull
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}
+        exit 1
+esac
+
+exit 0
