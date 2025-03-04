@@ -11,10 +11,7 @@
 LICENSE = "Unknown"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=f098732a73b5f6f3430472f5b094ffdb"
 
-SRC_URI = "git://github.com/cu-ecen-aeld/assignment-7-ldmacdonald;protocol=https;branch=main \
-           file://0001-patch-scull.patch \
-           file://files/scull-start-stop \
-           "
+SRC_URI = "git://github.com/cu-ecen-aeld/assignment-7-ldmacdonald;protocol=https;branch=main"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
@@ -23,9 +20,6 @@ SRCREV = "1cf8bf91e9502a122fb55d85e1f2c8217a2cc7f3"
 S = "${WORKDIR}/git"
 
 inherit module
-
-EXTRA_OEMAKE:append:task-install = " -C ${STAGING_KERNEL_DIR} M=${S}"
-EXTRA_OEMAKE += "KERNELDIR=${STAGING_KERNEL_DIR}"
 inherit update-rc.d
 INITSCRIPT_NAME = "scull-start-stop"
 INITSCRIPT_PARAMS = "start 99 S ."
@@ -40,4 +34,3 @@ FILES:${PN} += "${INIT_D_DIR}/${INITSCRIPT_NAME}"
 do_install:append () {
     install -d ${D}${INIT_D_DIR}
     install -m 0755 ${WORKDIR}/files/${INITSCRIPT_NAME} ${D}${INIT_D_DIR}/${INITSCRIPT_NAME}
-}

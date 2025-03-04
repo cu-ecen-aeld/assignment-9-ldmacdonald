@@ -1,0 +1,17 @@
+cd ~/poky
+source oe-init-build-env
+devtool add scull https://github.com/cu-ecen-aeld/assignment-7-ldmacdonald --srcbranch main
+devtool add misc-modules https://github.com/cu-ecen-aeld/assignment-7-ldmacdonald --srcbranch main
+
+recipetool create  https://github.com/cu-ecen-aeld/assignment-7-ldmacdonald --srcbranch main
+
+devtool finish scull ~/source/assignment-6-ldmacdonald/meta-aesd/recipes-scull/
+devtool finish misc-modules  ~/source/assignment-6-ldmacdonald/meta-aesd/recipes-misc-modules/
+
+-- Retry
+devtool finish misc-modules ~/source/assignment-6-ldmacdonald/meta-aesd/recipes-misc-modules/ -f
+
+//
+https://community.nxp.com/t5/Processor-Expert-Software/Creating-and-applying-a-git-patch-in-a-yocto-build/ta-p/1802826
+
+I stuck hte files in the build/download file
