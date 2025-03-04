@@ -8,12 +8,12 @@ case "$1" in
     start)
         echo "loading misc-modules"
         modprobe hello
-        modprobe faulty
+        module_load faulty
         ;;
     stop)
         echo "unloading misc-modules"
         rmmmod faulty
-        rmmod hello
+        module_unload hello
         ;;
     *)
         echo "Usage: $0 {start|stop}"
