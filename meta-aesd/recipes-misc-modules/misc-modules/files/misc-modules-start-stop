@@ -5,13 +5,13 @@ set -e
 case "$1" in
     start)
         echo "loading misc-modules"
-        module_load hello
         module_load faulty
+        modprobe hello
         ;;
     stop)
         echo "unloading misc-modules"
         module_unload faulty
-        module_unload hello
+        rmmod hello
         ;;
     *)
         echo "Usage: $0 {start|stop}"
