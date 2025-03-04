@@ -41,6 +41,7 @@ do_install:append () {
     install -m 0755 ${S}/misc-modules/module_load ${D}${bindir}/
     install -m 0755 ${S}/misc-modules/module_unload ${D}${bindir}/
 
+
     install -d ${D}/lib/modules/${KERNEL_VERSION}/extra
     install -m 0755 ${S}/misc-modules/hello.ko ${D}/lib/modules/${KERNEL_VERSION}/extra
     install -m 0755 ${S}/misc-modules/faulty.ko ${D}/lib/modules/${KERNEL_VERSION}/extra

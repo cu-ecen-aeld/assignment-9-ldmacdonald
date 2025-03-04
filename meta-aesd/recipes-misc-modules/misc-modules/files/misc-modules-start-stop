@@ -2,9 +2,6 @@
 
 set -e
 
-WD= pwd
-cd /lib/modules/5.15.118-yocto-standard/extra
-
 case "$1" in
     start)
         echo "loading misc-modules"
@@ -18,7 +15,6 @@ case "$1" in
         ;;
     *)
         echo "Usage: $0 {start|stop}"
-        cd $WD
         exit 1
 esac
 
