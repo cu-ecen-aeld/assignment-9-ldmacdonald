@@ -14,4 +14,7 @@ devtool finish misc-modules ~/source/assignment-6-ldmacdonald/meta-aesd/recipes-
 //
 https://community.nxp.com/t5/Processor-Expert-Software/Creating-and-applying-a-git-patch-in-a-yocto-build/ta-p/1802826
 
-I stuck hte files in the build/download file
+I stuck hte files in the build/download file; figured out the right way to handle this later
+
+devtool add aesdchar https://github.com/cu-ecen-aeld/assignments-3-and-later-ldmacdonald --srcbranch main
+
