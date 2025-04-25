@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LDD_MODULES
+	bool "ldd-modules"
+	help
+	  Includes ldd modules in the kernel image.
